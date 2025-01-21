@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Text Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            white-space: pre;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        function centerText(text, width) {
+            const padding = Math.max(0, Math.floor((width - text.length) / 2));
+            const leftPadding = " ".repeat(padding);
+            const rightPadding = " ".repeat(width - text.length - padding);
+            return leftPadding + text + rightPadding;
+        }
+
+        function printProfile(name, studentId, consoleWidth = 110) {
+            const outputDiv = document.getElementById("output");
+
+            const line1 = "Hello programming 2";
+            const line2 = "Lejohn D. Ramos";
+            const line3 = "24-0825-475";
+
+            const centeredLine1 = centerText(line1, consoleWidth);
+            const centeredLine2 = centerText(line2, consoleWidth);
+            const centeredLine3 = centerText(line3, consoleWidth);
+
+           
+            outputDiv.textContent = `${centeredLine1}\n${centeredLine2}\n${centeredLine3}`;
+        }
+
+        printProfile();
+    </script>
+</body>
+</html>
